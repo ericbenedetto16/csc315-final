@@ -113,7 +113,7 @@ CREATE TABLE Users (
     FOREIGN KEY(home_country) REFERENCES country(cname)
 );
 
-INSERT INTO users (id, email, password, fname, lname, home_country) VALUES (1, "fakeuser@real.site", "", "Totally", "Real", "United States");
+-- INSERT INTO users (id, email, password, fname, lname, home_country) VALUES (1, "fakeuser@real.site", "", "Totally", "Real", "United States");
 
 CREATE TABLE Favorites (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -122,8 +122,8 @@ CREATE TABLE Favorites (
     FOREIGN KEY(uid) REFERENCES users(id)
 );
 
-INSERT INTO favorites (uid, bname) VALUES (1,"Mozart");
-INSERT INTO favorites (uid, bname) VALUES (1,"Twisted Sister");
+-- INSERT INTO favorites (uid, bname) VALUES (1,"Mozart");
+-- INSERT INTO favorites (uid, bname) VALUES (1,"Twisted Sister");
 
 -- Create Indexes
 CREATE INDEX band_og_asc ON band_origins(bname ASC);
