@@ -129,14 +129,19 @@ CREATE TABLE Favorites (
 CREATE INDEX band_og_asc ON band_origins(bname ASC);
 CREATE INDEX band_style_asc ON band_styles(bname ASC);
 
--- cleanup
-DROP TABLE Band_Styles;
-DROP TABLE Band_Origins;
-DROP TABLE Bands;
-DROP TABLE Country;
-DROP TABLE Region;
-DROP TABLE Sub_Genre;
-DROP TABLE Genre;
-DROP TABLE Users;
-DROP TABLE Favorites;
-DROP DATABASE CSC315FinalFall2020;
+CREATE USER 'api'@'localhost' IDENTIFIED BY 'supersecretpassword';
+GRANT INSERT ON csc315_final.users TO 'api'@'localhost';
+GRANT SELECT ON csc315_final.users TO 'api'@'localhost';
+GRANT UPDATE ON csc315_final.users TO 'api'@'localhost';
+GRANT DELETE ON csc315_final.users TO 'api'@'localhost';
+GRANT INSERT ON csc315_final.favorites TO 'api'@'localhost';
+GRANT SELECT ON csc315_final.favorites TO 'api'@'localhost';
+GRANT UPDATE ON csc315_final.favorites TO 'api'@'localhost';
+GRANT DELETE ON csc315_final.favorites TO 'api'@'localhost';
+GRANT SELECT ON csc315_final.bands TO 'api'@'localhost';
+GRANT SELECT ON csc315_final.band_origins TO 'api'@'localhost';
+GRANT SELECT ON csc315_final.band_styles TO 'api'@'localhost';
+GRANT SELECT ON csc315_final.country TO 'api'@'localhost';
+GRANT SELECT ON csc315_final.region TO 'api'@'localhost';
+GRANT SELECT ON csc315_final.genre TO 'api'@'localhost';
+GRANT SELECT ON csc315_final.sub_genre TO 'api'@'localhost';
